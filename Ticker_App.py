@@ -3,8 +3,8 @@ import streamlit as st
 import pandas as pd
 
 st.write("My streamlit app to show TICKR history")
-ts=str(input("Enter ticker symbol"))
-
+# ts=str(input("Enter ticker symbol"))
+ts = st.text_input("Enter ticker symbol else default ticker is GOOGLE", 'GOOGL')
 td=yf.Ticker(ts)
 
 tdf=td.history(period='1d', start='2010-01-01', end='2020-01-01')
